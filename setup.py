@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="pip-migrate",
-    version="1.0",
+    version="1.0.1",
     author="Rohaan Ahmed",
     author_email="silent.death3500@gmail.com",
     description="A tool to backup and migrate Python packages",
