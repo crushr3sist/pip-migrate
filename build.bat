@@ -1,5 +1,3 @@
-python -m pip install PyInstaller
-
 @echo off
 setlocal enabledelayedexpansion
 
@@ -12,6 +10,17 @@ for %%I in (python.exe) do (
     )
 )
 
-python -m PyInstaller -F --paths=!package_path! main.py
+rem Define external modules that PyInstaller should include
+set "external_modules=progress, progress.bar"
+
+rem Create a list of --hidden-import options for PyInstaller
+set "hidden_imports="
+for %%M in (%external_modules%) do (
+    set "hidden_imports=!hidden_imports! --hidden-import %%M"
+)
+
+rem Use PyInstaller with the hidden imports
+py -m pip install progress
+python -m PyInstaller --onefile -F --paths=!package_path! %hidden_imports% main.py -n pip-migrate.exe
 
 endlocal
