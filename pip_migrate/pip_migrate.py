@@ -45,7 +45,10 @@ def parse():
 
 def fix():
     try:
-        os.system("python -m pip install -U --force pip")
+        os.system("curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py")
+        os.system("python get-pip.py")
+        os.system("python -m pip install -U pip")
+
     except Exception as e:
         print(e)
 
@@ -82,7 +85,7 @@ def cleanup():
         print(f"Error during cleanup: {e}")
 
 
-if __name__ == "__main":
+def main():
     if len(sys.argv) == 2:
         if sys.argv[1] == "before":
             if req_file_path.is_file():
@@ -115,3 +118,7 @@ if __name__ == "__main":
             migrate(packages_to_install)
     else:
         print("Usage: pip-migrate [before|after|cleanup] [packages_to_install]")
+
+
+if __name__ == "__main":
+    main()

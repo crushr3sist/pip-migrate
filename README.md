@@ -5,6 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/crushr3sist/pip-migrate)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/crushr3sist/pip-migrate)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/crushr3sist/pip-migrate/CI)
+![Repo Stars](https://img.shields.io/github/stars/crushr3sist/pip-migrate?style=social)
 
 ## Features
 
@@ -40,12 +41,16 @@ pip-migrate before
 After setting up your new Python environment, use the following command to migrate your packages from the backup:
 
 ```bash
+pip install pip-migrate
+
 pip-migrate after
+
+pip-migrate cleanup # optional
 ```
 
 You can also append additional packages to migrate:
 
-```
+```bash
 pip-migrate after package1,package2,package3
 ```
 
@@ -64,19 +69,3 @@ If you would like to contribute to this project, please check the CONTRIBUTING.m
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-
-Ronnyisalreadydead (crushr3sist)
-
-## Support
-
-If you encounter any issues or have questions, please open an issue on the GitHub repository.
-
-## GitHub Repository
-
-Keywords: pip, migrate, backup, restore, python packages, utility, tool
-
-## GitHub stars
-
-![Repo Stars](https://img.shields.io/github/stars/crushr3sist/pip-migrate?style=social)
